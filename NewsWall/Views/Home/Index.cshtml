@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@foreach (var x in Model.Feeds)
+{ }
+
+@{
+    var counter = 0;
+    while (counter < Model.Feeds.Count)
+    {
+    <div class="row">
+        @for (int i = 0; i < 4; i++)
+        {
+            if (counter == Model.Feeds.Count)
+                break;
+
+
+            <div class="card image-header" style="width:300px">
+                <div class="card-header fg-white"
+                     style="background-image: url(https://kupf.at/wp-content/uploads/2018/03/default-img.gif)">
+                    Journey To Mountains
+                </div>
+                <div class="card-content p-2">
+                    <p class="fg-gray">Posted on January 21, 2015</p>
+                    Quisque eget vestibulum nulla. Quisque quis dui quis ex
+                    ultricies efficitur vitae non felis. Phasellus quis nibh
+                    hendrerit...
+                </div>
+                <div class="card-footer">
+                    <button class="button secondary">Read More</button>
+                </div>
+            </div>
+
+            @*<div class="cell">
+                <h5>@Model.Feeds[counter].Title.Text</h5>
+                <p>@Model.Feeds[counter].Summary.Text</p>
+                <a href="@Model.Feeds[counter].Links[0].Uri">Read More</a>
+            </div>*@
+            counter++;
+
+
+        }
+    </div>
+    }
+}
+<div class="grid">
+
+</div>
