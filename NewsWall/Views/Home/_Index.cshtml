@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@foreach (var x in Model.Feeds)
+{ }
+
+<div class="grid">
+    @{
+        var counter = 0;
+        while (counter < Model.Feeds.Count)
+        {
+            <div class="row">
+                @for (int i = 0; i < 4; i++)
+                {
+                    if (counter == Model.Feeds.Count)
+                        break;
+
+                    <div class="col-md">
+                        <div class="card h-100" style="width: 100%; height:100%">
+                           
+                            <div class="card-body">
+                                <h5 class="card-title">@Model.Feeds[counter].Title.Text</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@Model.Feeds[counter].PublishDate.ToString()</h6>
+                                <p class="card-text">@Model.Feeds[counter].Summary.Text</p>
+                                <a href="@Model.Feeds[counter].Links[0].Uri" class="btn btn-primary">Continue Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="cell">
+                            <h5>@Model.Feeds[counter].Title.Text</h5>
+                            <p>@Model.Feeds[counter].Summary.Text</p>
+                            <a href="@Model.Feeds[counter].Links[0].Uri">Read More</a>
+                        </div>*@
+                    counter++;
+
+
+                }
+            </div>
+        }
+    }
+</div>

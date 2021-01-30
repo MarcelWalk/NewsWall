@@ -22,7 +22,7 @@ namespace NewsWall.Controllers
 
         public IActionResult Index()
         {
-            return View(new FeedViewModel("https://www.wired.com/feed/category/security/latest/rss"));
+            return View(new FeedViewModel("https://www.cnet.com/rss/news/"));
         }
 
         public IActionResult Privacy()
